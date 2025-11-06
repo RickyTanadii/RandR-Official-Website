@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,19 +10,19 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html{
+html {
     font-size: 62.5%;
 }
 
-body{
+body {
     width: 100%;
     height: 100vh;
     overflow-x: hidden;
-    background-color: rgb(134, 73, 73);
+    background-color: rgb(0, 0, 0);
     color: white;
 }
 
-header{
+header {
     margin-top: 20px;
     position: fixed;
     top: 0;
@@ -37,7 +37,7 @@ header{
     z-index: 100;
 }
 
-.logo{
+.logo {
     font-size: 3rem;
     color: #b74b4b;
     font-weight: 800;
@@ -45,11 +45,11 @@ header{
     transition: 0.5s ease;
 }
 
-.logo:hover{
+.logo:hover {
     transform: scale(1.1);
 }
 
-nav a{
+nav a {
     font-size: 1.8rem;
     color: white;
     margin-left: 4rem;
@@ -59,50 +59,64 @@ nav a{
 }
 
 nav a:hover,
-nav a.active{
+nav a.active {
     color: #b74b4b;
     border-bottom: 3px solid #b74b4b;
 }
 
-@media(max-width:995px){
-    nav{
+/* Hamburger menu toggle button */
+.menu-toggle {
+    display: none;
+    font-size: 2.5rem;
+    color: #b74b4b;
+    cursor: pointer;
+    user-select: none;
+}
+
+@media (max-width: 995px) {
+    nav {
         position: absolute;
         display: none;
-        top: 0;
+        top: 60px;
         right: 0;
-        width: 40%;
+        width: 60%;
         border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
         border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
+        padding: 1rem;
         background-color: #161616;
-        border-top: 0.1rem solid rgba(0,0,0,0.1);
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        flex-direction: column;
     }
 
-    nav.active{
-        display: block;
+    nav.active {
+        display: flex;
     }
 
-    nav a{
+    nav a {
         display: block;
         font-size: 2rem;
-        margin: 3rem 0;
+        margin: 1.5rem 0;
+        border-bottom: none;
     }
 
     nav a:hover,
-    nav a.active{
+    nav a.active {
         padding: 1rem;
         border-radius: 0.5rem;
         border-bottom: 0.5rem solid #b74b4b;
     }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
-section{
+section {
     min-height: 100vh;
     padding: 5rem 9% 5rem;
 }
 
-.home{
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,45 +124,49 @@ section{
     background-color: black;
 }
 
-.home .home-content h1{
+.home .home-content h1 {
     font-size: 6rem;
     font-weight: 700;
     line-height: 1.3;
 }
 
-span{
+span {
     color: #b74b4b;
 }
 
-.home-content h3{
+.home-content h3 {
     font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
-.home-content p{
+.home-content p {
     font-size: 1.6rem;
 }
 
-.home-img{
+.home-img {
     border-radius: 50%;
 }
 
-.home-img img{
+.home-img img {
     position: relative;
     width: 36vw;
+    max-width: 400px;
     border-radius: 80%;
     box-shadow: 0 0 25px solid #b74b4b;
     cursor: pointer;
     transition: 0.2s linear;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.home-img img:hover{
+.home-img img:hover {
     font-size: 1.8rem;
     font-weight: 500;
 }
 
-.social-icons a{
+.social-icons a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -163,14 +181,14 @@ span{
     color: #b74b4b;
 }
 
-.social-icons a:hover{
+.social-icons a:hover {
     color: black;
     transform: scale(1.3) translateY(-5px);
     background-color: #b74b4b;
-    box-shadow: 0  0 25px #b74b4b;
+    box-shadow: 0 0 25px #b74b4b;
 }
 
-.btn{
+.btn {
     display: inline-block;
     padding: 1rem 2.8rem;
     background-color: black;
@@ -184,85 +202,120 @@ span{
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
     transform: scale3d(1.03);
     background-color: #b74b4b;
     color: black;
     box-shadow: 0 0 25px #b74b4b;
 }
 
-.typing-text{
+.typing-text {
     font-size: 34px;
     font-weight: 600;
     min-width: 280px;
 }
 
-.typing-text span{
+.typing-text span {
     position: relative;
 }
 
-.typing-text span::before{
+.typing-text span::before {
     content: "Money Literacy";
     color: #b74b4b;
     animation: words 20s infinite;
 }
 
-.typing-text span::after{
+.typing-text span::after {
     content: "";
-    background-color: black;
     position: absolute;
     width: calc(100% + 8px);
     height: 100%;
     border-left: 3px solid black;
-    right: -8;
+    right: -8px;
     animation: cursor 0.6s infinite;
 }
 
-@keyframes cursor{
-    to{
+@keyframes cursor {
+    to {
         border-left: 3px solid #b74b4b;
     }
 }
 
-@keyframes words{
-    0%, 20%{
+@keyframes words {
+    0%,
+    20% {
         content: "Order Now!";
     }
-    21%, 40%{
+    21%,
+    40% {
         content: "Follow Our Instagram!";
     }
-    41%, 60%{
+    41%,
+    60% {
         content: "After Sports Drink";
     }
-    61%, 80%{
+    61%,
+    80% {
         content: "Specialized";
     }
-    81%, 100%{
+    81%,
+    100% {
         content: "Delivery";
     }
 }
 
-@media (max-width: 1000px){
-    .home{
+/* Responsive tweaks for medium and small screens */
+@media (max-width: 1000px) {
+    .home {
         gap: 4rem;
     }
 }
 
-@media(max-width:995px){
-    .home{
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 2rem;
+    }
+
+    .home-content h1 {
+        font-size: 4.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1.4rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .home-img img {
+        width: 80vw;
+        max-width: 300px;
+        margin: 2rem 0 1rem 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .home {
         flex-direction: column;
         margin: 5rem 4rem;
     }
 
-    .home .home-content h3{
+    .home .home-content h3 {
         font-size: 2.5rem;
     }
 
-    .home-content h1{
+    .home-content h1 {
         font-size: 5rem;
     }
 
-    .home-img img{
+    .home-img img {
         width: 70vw;
         margin-top: 4rem;
     }
