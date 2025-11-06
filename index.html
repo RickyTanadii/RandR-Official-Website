@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>R&R Official Website: Home</title>
 </head>
+
 <body>
     <header>
         <a href="index.html" class="logo">R&R</a>
 
+        <div class="menu-toggle">
+            <i class="fa fa-bars"></i>
+        </div>
+
         <nav>
-            <a href="#" class="active"> Home</a>
-            <a href="About_Us.html" >About Us</a>
-            <a href="Service.html" >Service</a>
-            <a href="Shop_Now.html" >Order NOW!</a>
+            <a href="#" class="active">Home</a>
+            <a href="About_Us.html">About Us</a>
+            <a href="Service.html">Service</a>
+            <a href="Shop_Now.html">Order NOW!</a>
         </nav>
     </header>
+
     <section class="home">
         <div class="home-img">
-            <img src="Main_Bottle_Pic.png" alt="">
+            <img src="Main_Bottle_Pic.png" alt="Main Bottle" />
         </div>
         <div class="home-content">
             <h1>Welcome To R&R!</h1>
-            <h3 class="typing-text"><span></span> Project</h3>
+            <h3 class="typing-text"><span></span></h3>
             <p>R&R is a business that provides refreshing after-sports drinks at affordable prices. We focus on helping MGIS students and active individuals rehydrate and recharge by reselling quality beverages at budget-friendly rates. Whether it’s after a game, workout, or training session, R&R makes it easy to relax and refresh without spending much.</p>
             <div class="social-icons">
                 <a href="https://www.instagram.com/mgis.rnr/"><i class="fa-brands fa-instagram"></i></a>
@@ -36,5 +42,15 @@
             <p>Marsekal: +6281945087758</p>
         </div>
     </section>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
 </body>
+
 </html>
